@@ -1,0 +1,946 @@
+261018-20:25:47,251 nipype.workflow DEBUG:
+	 (t1-linear.ReadingFiles, t1-linear.Input): No edge data
+261018-20:25:47,251 nipype.workflow DEBUG:
+	 (t1-linear.ReadingFiles, t1-linear.Input): new edge data: {'connect': [('anat', 'anat')]}
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.ImageID): No edge data
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.ImageID): new edge data: {'connect': [('anat', 'filename')]}
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.n4biascorrection): No edge data
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.n4biascorrection): new edge data: {'connect': [('anat', 'input_image')]}
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.n4biascorrection, t1-linear.antsRegistrationSynQuick): No edge data
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.n4biascorrection, t1-linear.antsRegistrationSynQuick): new edge data: {'connect': [('output_image', 'moving_image')]}
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.ImageID, t1-linear.antsRegistrationSynQuick): No edge data
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.ImageID, t1-linear.antsRegistrationSynQuick): new edge data: {'connect': [('image_id', 'output_prefix')]}
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.ImageID, t1-linear.Output): No edge data
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.ImageID, t1-linear.Output): new edge data: {'connect': [('image_id', 'image_id')]}
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.antsRegistrationSynQuick, t1-linear.Output): No edge data
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.antsRegistrationSynQuick, t1-linear.Output): new edge data: {'connect': [('out_matrix', 'affine_mat')]}
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.antsRegistrationSynQuick, t1-linear.Output): Edge data exists: {'connect': [('out_matrix', 'affine_mat')]}
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.antsRegistrationSynQuick, t1-linear.Output): new edge data: {'connect': [('out_matrix', 'affine_mat'), ('warped_image', 'outfile_reg')]}
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.WriteEndMessage): No edge data
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.WriteEndMessage): new edge data: {'connect': [('anat', 'anat')]}
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.antsRegistrationSynQuick, t1-linear.cropnifti): No edge data
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.antsRegistrationSynQuick, t1-linear.cropnifti): new edge data: {'connect': [('warped_image', 'input_image')]}
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.cropnifti, t1-linear.Output): No edge data
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.cropnifti, t1-linear.Output): new edge data: {'connect': [('output_img', 'outfile_crop')]}
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.cropnifti, t1-linear.WriteEndMessage): No edge data
+261018-20:25:47,254 nipype.workflow DEBUG:
+	 (t1-linear.cropnifti, t1-linear.WriteEndMessage): new edge data: {'connect': [('output_img', 'final_file')]}
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.ContainerPath): No edge data
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.ContainerPath): new edge data: {'connect': [('anat', 'bids_or_caps_filename')]}
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.GetIDs): No edge data
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.GetIDs): new edge data: {'connect': [('image_id', 'bids_image_id')]}
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.ContainerPath, t1-linear.WriteCaps): No edge data
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.ContainerPath, t1-linear.WriteCaps): new edge data: {'connect': [(('container', 'def fix_join(path, *paths):\n    """Fix joined path.\n\n    This workaround function is used in pipelines like DWIPreprocessing* or PETVolume. In the workflow.connect part,\n    you can use some function that are used as string, causing an import error\n    """\n    import os\n\n    return os.path.join(path, *paths)\n', ('t1_linear',)), 'container')]}
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.GetIDs, t1-linear.WriteCaps): No edge data
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.GetIDs, t1-linear.WriteCaps): new edge data: {'connect': [('substitutions', 'substitutions')]}
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): No edge data
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): new edge data: {'connect': [('image_id', '@image_id')]}
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): Edge data exists: {'connect': [('image_id', '@image_id')]}
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): new edge data: {'connect': [('image_id', '@image_id'), ('outfile_reg', '@outfile_reg')]}
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): Edge data exists: {'connect': [('image_id', '@image_id'), ('outfile_reg', '@outfile_reg')]}
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): new edge data: {'connect': [('image_id', '@image_id'), ('outfile_reg', '@outfile_reg'), ('affine_mat', '@affine_mat')]}
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): Edge data exists: {'connect': [('image_id', '@image_id'), ('outfile_reg', '@outfile_reg'), ('affine_mat', '@affine_mat')]}
+261018-20:25:47,255 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): new edge data: {'connect': [('image_id', '@image_id'), ('outfile_reg', '@outfile_reg'), ('affine_mat', '@affine_mat'), ('outfile_crop', '@outfile_crop')]}
+261018-20:25:47,270 nipype.workflow DEBUG:
+	 [MultiProc] Starting (n_procs=3, n_gpu_procs=0, mem_gb=14.40, cwd=/Users/sarthakahuja/Downloads/preprocessing_v2)
+261018-20:25:47,273 nipype.workflow DEBUG:
+	 Creating flat graph for workflow: t1-linear
+261018-20:25:47,274 nipype.workflow DEBUG:
+	 expanding workflow: t1-linear
+261018-20:25:47,275 nipype.workflow DEBUG:
+	 processing node: t1-linear.Input
+261018-20:25:47,275 nipype.workflow DEBUG:
+	 processing node: t1-linear.Output
+261018-20:25:47,275 nipype.workflow DEBUG:
+	 processing node: t1-linear.ReadingFiles
+261018-20:25:47,275 nipype.workflow DEBUG:
+	 processing node: t1-linear.ImageID
+261018-20:25:47,275 nipype.workflow DEBUG:
+	 processing node: t1-linear.n4biascorrection
+261018-20:25:47,275 nipype.workflow DEBUG:
+	 processing node: t1-linear.antsRegistrationSynQuick
+261018-20:25:47,275 nipype.workflow DEBUG:
+	 processing node: t1-linear.WriteEndMessage
+261018-20:25:47,275 nipype.workflow DEBUG:
+	 processing node: t1-linear.cropnifti
+261018-20:25:47,275 nipype.workflow DEBUG:
+	 processing node: t1-linear.ContainerPath
+261018-20:25:47,275 nipype.workflow DEBUG:
+	 processing node: t1-linear.GetIDs
+261018-20:25:47,275 nipype.workflow DEBUG:
+	 processing node: t1-linear.WriteCaps
+261018-20:25:47,275 nipype.workflow DEBUG:
+	 finished expanding workflow: t1-linear
+261018-20:25:47,275 nipype.workflow INFO:
+	 Workflow t1-linear settings: ['check', 'execution', 'logging', 'monitoring']
+261018-20:25:47,276 nipype.workflow DEBUG:
+	 PE: expanding iterables
+261018-20:25:47,276 nipype.workflow DEBUG:
+	 Removed the identity node t1-linear.Input from the graph.
+261018-20:25:47,276 nipype.workflow DEBUG:
+	 Removed the identity node t1-linear.Output from the graph.
+261018-20:25:47,276 nipype.workflow DEBUG:
+	 Detected iterable nodes [t1-linear.ReadingFiles]
+261018-20:25:47,276 nipype.workflow DEBUG:
+	 Expanding the iterable node t1-linear.ReadingFiles...
+261018-20:25:47,276 nipype.workflow DEBUG:
+	 node: t1-linear.ReadingFiles iterables: {'anat': <function _standardize_iterables.<locals>.make_field_func.<locals>.<lambda> at 0x111fa13a0>}
+261018-20:25:47,276 nipype.workflow DEBUG:
+	 ('subnodes:', [t1-linear.ReadingFiles, t1-linear.ImageID, t1-linear.antsRegistrationSynQuick, t1-linear.cropnifti, t1-linear.WriteEndMessage, t1-linear.WriteCaps, t1-linear.GetIDs, t1-linear.n4biascorrection, t1-linear.ContainerPath])
+261018-20:25:47,277 nipype.workflow DEBUG:
+	 [Node] ReadingFiles - setting input anat = /Users/sarthakahuja/ppmi_bids/sub-3279/ses-M00/anat/sub-3279_ses-M00_T1w.nii.gz
+261018-20:25:47,277 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_anat_..Users..sarthakahuja..ppmi_bids..sub-3279..ses-M00..anat..sub-3279_ses-M00_T1w.nii.gz
+261018-20:25:47,277 nipype.workflow DEBUG:
+	 [Node] ReadingFiles - setting input anat = /Users/sarthakahuja/ppmi_bids/sub-3280/ses-M00/anat/sub-3280_ses-M00_T1w.nii.gz
+261018-20:25:47,277 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_anat_..Users..sarthakahuja..ppmi_bids..sub-3280..ses-M00..anat..sub-3280_ses-M00_T1w.nii.gz
+261018-20:25:47,277 nipype.workflow DEBUG:
+	 PE: expanding iterables ... done
+261018-20:25:47,278 nipype.workflow DEBUG:
+	 [Node] ImageID - setting input filename = /Users/sarthakahuja/ppmi_bids/sub-3279/ses-M00/anat/sub-3279_ses-M00_T1w.nii.gz
+261018-20:25:47,278 nipype.workflow DEBUG:
+	 [Node] n4biascorrection - setting input input_image = /Users/sarthakahuja/ppmi_bids/sub-3279/ses-M00/anat/sub-3279_ses-M00_T1w.nii.gz
+261018-20:25:47,278 nipype.workflow DEBUG:
+	 [Node] WriteEndMessage - setting input anat = /Users/sarthakahuja/ppmi_bids/sub-3279/ses-M00/anat/sub-3279_ses-M00_T1w.nii.gz
+261018-20:25:47,278 nipype.workflow DEBUG:
+	 [Node] ContainerPath - setting input bids_or_caps_filename = /Users/sarthakahuja/ppmi_bids/sub-3279/ses-M00/anat/sub-3279_ses-M00_T1w.nii.gz
+261018-20:25:47,278 nipype.workflow DEBUG:
+	 Removed the identity node t1-linear.ReadingFiles from the graph.
+261018-20:25:47,278 nipype.workflow DEBUG:
+	 [Node] ImageID - setting input filename = /Users/sarthakahuja/ppmi_bids/sub-3280/ses-M00/anat/sub-3280_ses-M00_T1w.nii.gz
+261018-20:25:47,278 nipype.workflow DEBUG:
+	 [Node] n4biascorrection - setting input input_image = /Users/sarthakahuja/ppmi_bids/sub-3280/ses-M00/anat/sub-3280_ses-M00_T1w.nii.gz
+261018-20:25:47,278 nipype.workflow DEBUG:
+	 [Node] WriteEndMessage - setting input anat = /Users/sarthakahuja/ppmi_bids/sub-3280/ses-M00/anat/sub-3280_ses-M00_T1w.nii.gz
+261018-20:25:47,278 nipype.workflow DEBUG:
+	 [Node] ContainerPath - setting input bids_or_caps_filename = /Users/sarthakahuja/ppmi_bids/sub-3280/ses-M00/anat/sub-3280_ses-M00_T1w.nii.gz
+261018-20:25:47,278 nipype.workflow DEBUG:
+	 Removed the identity node t1-linear.ReadingFiles from the graph.
+261018-20:25:47,279 nipype.workflow DEBUG:
+	 Performing depth first search
+261018-20:25:47,280 nipype.workflow INFO:
+	 Running in parallel.
+261018-20:25:47,281 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 0/0/6 (done/running/ready), 0/16 (pending_tasks/waiting).
+261018-20:25:47,281 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+261018-20:25:47,281 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 6 jobs ready. Free memory (GB): 14.40/14.40, Free processors: 3/3, Free GPU slot:0/0.
+261018-20:25:47,309 nipype.workflow DEBUG:
+	 Allocating t1-linear.ImageID ID=0 (0.20GB, 1 threads). Free: 14.20GB, 2 threads, 0 GPU slots.
+261018-20:25:47,309 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/ImageID".
+261018-20:25:47,309 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.ImageID" locally: cached=False, updated=False.
+261018-20:25:47,309 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/ImageID".
+261018-20:25:47,314 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.ImageID (taskid=1).
+261018-20:25:47,314 nipype.workflow DEBUG:
+	 Allocating t1-linear.n4biascorrection ID=1 (0.20GB, 1 threads). Free: 14.00GB, 1 threads, 0 GPU slots.
+261018-20:25:47,314 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/n4biascorrection".
+261018-20:25:47,314 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.n4biascorrection" locally: cached=False, updated=False.
+261018-20:25:47,314 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/n4biascorrection".
+261018-20:25:47,317 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.n4biascorrection (taskid=2).
+261018-20:25:47,317 nipype.workflow DEBUG:
+	 Allocating t1-linear.ContainerPath ID=2 (0.20GB, 1 threads). Free: 13.80GB, 0 threads, 0 GPU slots.
+261018-20:25:47,317 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/ContainerPath".
+261018-20:25:47,317 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.ContainerPath" locally: cached=False, updated=False.
+261018-20:25:47,317 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/ContainerPath".
+261018-20:25:47,320 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.ContainerPath (taskid=3).
+261018-20:25:47,320 nipype.workflow DEBUG:
+	 Cannot allocate job 3 (0.20GB, 1 threads, 0 GPU slots).
+261018-20:25:47,320 nipype.workflow DEBUG:
+	 Cannot allocate job 4 (0.20GB, 1 threads, 0 GPU slots).
+261018-20:25:47,320 nipype.workflow DEBUG:
+	 Cannot allocate job 5 (0.20GB, 1 threads, 0 GPU slots).
+261018-20:25:49,286 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 0/3/3 (done/running/ready), 3/13 (pending_tasks/waiting).
+261018-20:25:49,287 nipype.workflow INFO:
+	 [Job 0] Completed (t1-linear.ImageID).
+261018-20:25:49,288 nipype.workflow INFO:
+	 [Job 2] Completed (t1-linear.ContainerPath).
+261018-20:25:49,288 nipype.workflow DEBUG:
+	 Tasks currently running: 1. Pending: 1.
+261018-20:25:49,289 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 4 jobs ready. Free memory (GB): 14.20/14.40, Free processors: 2/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.n4biascorrection
+261018-20:25:49,322 nipype.workflow DEBUG:
+	 Allocating t1-linear.ImageID ID=3 (0.20GB, 1 threads). Free: 14.00GB, 1 threads, 0 GPU slots.
+261018-20:25:49,322 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/ImageID".
+261018-20:25:49,322 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.ImageID" locally: cached=False, updated=False.
+261018-20:25:49,322 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/ImageID".
+261018-20:25:49,322 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.ImageID (taskid=4).
+261018-20:25:49,322 nipype.workflow DEBUG:
+	 Allocating t1-linear.n4biascorrection ID=4 (0.20GB, 1 threads). Free: 13.80GB, 0 threads, 0 GPU slots.
+261018-20:25:49,323 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/n4biascorrection".
+261018-20:25:49,323 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.n4biascorrection" locally: cached=False, updated=False.
+261018-20:25:49,323 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/n4biascorrection".
+261018-20:25:49,323 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.n4biascorrection (taskid=5).
+261018-20:25:49,323 nipype.workflow DEBUG:
+	 Cannot allocate job 5 (0.20GB, 1 threads, 0 GPU slots).
+261018-20:25:49,323 nipype.workflow DEBUG:
+	 Cannot allocate job 6 (0.20GB, 1 threads, 0 GPU slots).
+261018-20:25:51,291 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 2/3/2 (done/running/ready), 3/11 (pending_tasks/waiting).
+261018-20:25:51,291 nipype.workflow INFO:
+	 [Job 3] Completed (t1-linear.ImageID).
+261018-20:25:51,291 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+261018-20:25:51,292 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 3 jobs ready. Free memory (GB): 14.00/14.40, Free processors: 1/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.n4biascorrection
+                       * t1-linear.n4biascorrection
+261018-20:25:51,321 nipype.workflow DEBUG:
+	 Allocating t1-linear.ContainerPath ID=5 (0.20GB, 1 threads). Free: 13.80GB, 0 threads, 0 GPU slots.
+261018-20:25:51,321 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/ContainerPath".
+261018-20:25:51,321 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.ContainerPath" locally: cached=False, updated=False.
+261018-20:25:51,321 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/ContainerPath".
+261018-20:25:51,321 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.ContainerPath (taskid=6).
+261018-20:25:51,321 nipype.workflow DEBUG:
+	 Cannot allocate job 6 (0.20GB, 1 threads, 0 GPU slots).
+261018-20:25:51,321 nipype.workflow DEBUG:
+	 Cannot allocate job 8 (0.20GB, 1 threads, 0 GPU slots).
+261018-20:25:53,296 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 3/3/2 (done/running/ready), 3/10 (pending_tasks/waiting).
+261018-20:25:53,296 nipype.workflow INFO:
+	 [Job 5] Completed (t1-linear.ContainerPath).
+261018-20:25:53,297 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+261018-20:25:53,297 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 14.00/14.40, Free processors: 1/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.n4biascorrection
+                       * t1-linear.n4biascorrection
+261018-20:25:53,321 nipype.workflow DEBUG:
+	 Allocating t1-linear.GetIDs ID=6 (0.20GB, 1 threads). Free: 13.80GB, 0 threads, 0 GPU slots.
+261018-20:25:53,321 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/GetIDs".
+261018-20:25:53,321 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.GetIDs" locally: cached=False, updated=False.
+261018-20:25:53,321 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/GetIDs".
+261018-20:25:53,321 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.GetIDs (taskid=7).
+261018-20:25:53,321 nipype.workflow DEBUG:
+	 Cannot allocate job 8 (0.20GB, 1 threads, 0 GPU slots).
+261018-20:25:55,301 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 4/3/1 (done/running/ready), 3/9 (pending_tasks/waiting).
+261018-20:25:55,301 nipype.workflow INFO:
+	 [Job 6] Completed (t1-linear.GetIDs).
+261018-20:25:55,301 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+261018-20:25:55,302 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 14.00/14.40, Free processors: 1/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.n4biascorrection
+                       * t1-linear.n4biascorrection
+261018-20:25:55,325 nipype.workflow DEBUG:
+	 Allocating t1-linear.GetIDs ID=8 (0.20GB, 1 threads). Free: 13.80GB, 0 threads, 0 GPU slots.
+261018-20:25:55,325 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/GetIDs".
+261018-20:25:55,325 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.GetIDs" locally: cached=False, updated=False.
+261018-20:25:55,325 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/GetIDs".
+261018-20:25:55,325 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.GetIDs (taskid=8).
+261018-20:25:57,306 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 5/3/0 (done/running/ready), 3/8 (pending_tasks/waiting).
+261018-20:25:57,306 nipype.workflow INFO:
+	 [Job 8] Completed (t1-linear.GetIDs).
+261018-20:25:57,307 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+261018-20:25:57,307 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 14.00/14.40, Free processors: 1/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.n4biascorrection
+                       * t1-linear.n4biascorrection
+261018-20:25:59,311 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 6/2/0 (done/running/ready), 2/8 (pending_tasks/waiting).
+261018-20:25:59,311 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+261018-20:27:05,465 nipype.workflow INFO:
+	 [Job 1] Completed (t1-linear.n4biascorrection).
+261018-20:27:05,467 nipype.workflow INFO:
+	 [Job 4] Completed (t1-linear.n4biascorrection).
+261018-20:27:05,468 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+261018-20:27:05,468 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 14.40/14.40, Free processors: 3/3, Free GPU slot:0/0.
+261018-20:27:05,527 nipype.workflow DEBUG:
+	 Allocating t1-linear.antsRegistrationSynQuick ID=7 (0.20GB, 1 threads). Free: 14.20GB, 2 threads, 0 GPU slots.
+261018-20:27:05,528 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/antsRegistrationSynQuick".
+261018-20:27:05,528 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.antsRegistrationSynQuick" locally: cached=False, updated=False.
+261018-20:27:05,528 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/antsRegistrationSynQuick".
+261018-20:27:05,528 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.antsRegistrationSynQuick (taskid=9).
+261018-20:27:05,528 nipype.workflow DEBUG:
+	 Allocating t1-linear.antsRegistrationSynQuick ID=9 (0.20GB, 1 threads). Free: 14.00GB, 1 threads, 0 GPU slots.
+261018-20:27:05,528 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/antsRegistrationSynQuick".
+261018-20:27:05,528 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.antsRegistrationSynQuick" locally: cached=False, updated=False.
+261018-20:27:05,528 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/antsRegistrationSynQuick".
+261018-20:27:05,528 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.antsRegistrationSynQuick (taskid=10).
+261018-20:27:07,469 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 8/2/0 (done/running/ready), 2/6 (pending_tasks/waiting).
+261018-20:27:07,469 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+261018-20:27:07,469 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 14.00/14.40, Free processors: 1/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.antsRegistrationSynQuick
+                       * t1-linear.antsRegistrationSynQuick
+261018-20:27:31,511 nipype.workflow INFO:
+	 [Job 9] Completed (t1-linear.antsRegistrationSynQuick).
+261018-20:27:31,511 nipype.workflow DEBUG:
+	 Tasks currently running: 1. Pending: 1.
+261018-20:27:31,512 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 14.20/14.40, Free processors: 2/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.antsRegistrationSynQuick
+261018-20:27:31,540 nipype.workflow DEBUG:
+	 Allocating t1-linear.cropnifti ID=11 (0.20GB, 1 threads). Free: 14.00GB, 1 threads, 0 GPU slots.
+261018-20:27:31,540 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/cropnifti".
+261018-20:27:31,540 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.cropnifti" locally: cached=False, updated=False.
+261018-20:27:31,540 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/cropnifti".
+261018-20:27:31,540 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.cropnifti (taskid=11).
+261018-20:27:33,516 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 9/2/0 (done/running/ready), 2/5 (pending_tasks/waiting).
+261018-20:27:33,516 nipype.workflow INFO:
+	 [Job 11] Completed (t1-linear.cropnifti).
+261018-20:27:33,516 nipype.workflow DEBUG:
+	 Tasks currently running: 1. Pending: 1.
+261018-20:27:33,516 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 14.20/14.40, Free processors: 2/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.antsRegistrationSynQuick
+261018-20:27:33,542 nipype.workflow DEBUG:
+	 Allocating t1-linear.WriteEndMessage ID=14 (0.20GB, 1 threads). Free: 14.00GB, 1 threads, 0 GPU slots.
+261018-20:27:33,542 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/WriteEndMessage".
+261018-20:27:33,542 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.WriteEndMessage" locally: cached=False, updated=False.
+261018-20:27:33,542 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/WriteEndMessage".
+261018-20:27:33,542 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.WriteEndMessage (taskid=12).
+261018-20:27:33,543 nipype.workflow DEBUG:
+	 Allocating t1-linear.WriteCaps ID=15 (0.20GB, 1 threads). Free: 13.80GB, 0 threads, 0 GPU slots.
+261018-20:27:33,543 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/WriteCaps".
+261018-20:27:33,543 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.WriteCaps" locally: cached=False, updated=False.
+261018-20:27:33,543 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/WriteCaps".
+261018-20:27:33,543 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.WriteCaps (taskid=13).
+261018-20:27:35,521 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 10/3/0 (done/running/ready), 3/3 (pending_tasks/waiting).
+261018-20:27:35,521 nipype.workflow INFO:
+	 [Job 14] Completed (t1-linear.WriteEndMessage).
+261018-20:27:35,521 nipype.workflow INFO:
+	 [Job 15] Completed (t1-linear.WriteCaps).
+261018-20:27:35,521 nipype.workflow DEBUG:
+	 Tasks currently running: 1. Pending: 1.
+261018-20:27:35,522 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 0 jobs ready. Free memory (GB): 14.20/14.40, Free processors: 2/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.antsRegistrationSynQuick
+261018-20:27:37,527 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 12/1/0 (done/running/ready), 1/3 (pending_tasks/waiting).
+261018-20:27:37,529 nipype.workflow INFO:
+	 [Job 7] Completed (t1-linear.antsRegistrationSynQuick).
+261018-20:27:37,530 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+261018-20:27:37,531 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 14.40/14.40, Free processors: 3/3, Free GPU slot:0/0.
+261018-20:27:37,590 nipype.workflow DEBUG:
+	 Allocating t1-linear.cropnifti ID=10 (0.20GB, 1 threads). Free: 14.20GB, 2 threads, 0 GPU slots.
+261018-20:27:37,590 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/cropnifti".
+261018-20:27:37,590 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.cropnifti" locally: cached=False, updated=False.
+261018-20:27:37,590 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/cropnifti".
+261018-20:27:37,590 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.cropnifti (taskid=14).
+261018-20:27:39,532 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 13/1/0 (done/running/ready), 1/2 (pending_tasks/waiting).
+261018-20:27:39,533 nipype.workflow INFO:
+	 [Job 10] Completed (t1-linear.cropnifti).
+261018-20:27:39,534 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+261018-20:27:39,535 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 14.40/14.40, Free processors: 3/3, Free GPU slot:0/0.
+261018-20:27:39,595 nipype.workflow DEBUG:
+	 Allocating t1-linear.WriteEndMessage ID=12 (0.20GB, 1 threads). Free: 14.20GB, 2 threads, 0 GPU slots.
+261018-20:27:39,595 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/WriteEndMessage".
+261018-20:27:39,595 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.WriteEndMessage" locally: cached=False, updated=False.
+261018-20:27:39,595 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/WriteEndMessage".
+261018-20:27:39,595 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.WriteEndMessage (taskid=15).
+261018-20:27:39,595 nipype.workflow DEBUG:
+	 Allocating t1-linear.WriteCaps ID=13 (0.20GB, 1 threads). Free: 14.00GB, 1 threads, 0 GPU slots.
+261018-20:27:39,595 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/WriteCaps".
+261018-20:27:39,595 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.WriteCaps" locally: cached=False, updated=False.
+261018-20:27:39,595 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/WriteCaps".
+261018-20:27:39,596 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.WriteCaps (taskid=16).
+261018-20:27:41,537 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 14/2/0 (done/running/ready), 2/0 (pending_tasks/waiting).
+261018-20:27:41,537 nipype.workflow INFO:
+	 [Job 12] Completed (t1-linear.WriteEndMessage).
+261018-20:27:41,538 nipype.workflow INFO:
+	 [Job 13] Completed (t1-linear.WriteCaps).
+261018-20:27:41,538 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+261018-20:27:41,539 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 0 jobs ready. Free memory (GB): 14.40/14.40, Free processors: 3/3, Free GPU slot:0/0.
+261018-20:27:41,539 nipype.workflow DEBUG:
+	 No tasks are being run, and no jobs can be submitted to the queue. Potential deadlock
+261018-21:31:02,903 nipype.workflow DEBUG:
+	 (t1-linear.ReadingFiles, t1-linear.Input): No edge data
+261018-21:31:02,903 nipype.workflow DEBUG:
+	 (t1-linear.ReadingFiles, t1-linear.Input): new edge data: {'connect': [('anat', 'anat')]}
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.ImageID): No edge data
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.ImageID): new edge data: {'connect': [('anat', 'filename')]}
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.n4biascorrection): No edge data
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.n4biascorrection): new edge data: {'connect': [('anat', 'input_image')]}
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.n4biascorrection, t1-linear.antsRegistrationSynQuick): No edge data
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.n4biascorrection, t1-linear.antsRegistrationSynQuick): new edge data: {'connect': [('output_image', 'moving_image')]}
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.ImageID, t1-linear.antsRegistrationSynQuick): No edge data
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.ImageID, t1-linear.antsRegistrationSynQuick): new edge data: {'connect': [('image_id', 'output_prefix')]}
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.ImageID, t1-linear.Output): No edge data
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.ImageID, t1-linear.Output): new edge data: {'connect': [('image_id', 'image_id')]}
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.antsRegistrationSynQuick, t1-linear.Output): No edge data
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.antsRegistrationSynQuick, t1-linear.Output): new edge data: {'connect': [('out_matrix', 'affine_mat')]}
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.antsRegistrationSynQuick, t1-linear.Output): Edge data exists: {'connect': [('out_matrix', 'affine_mat')]}
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.antsRegistrationSynQuick, t1-linear.Output): new edge data: {'connect': [('out_matrix', 'affine_mat'), ('warped_image', 'outfile_reg')]}
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.WriteEndMessage): No edge data
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.WriteEndMessage): new edge data: {'connect': [('anat', 'anat')]}
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.antsRegistrationSynQuick, t1-linear.cropnifti): No edge data
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.antsRegistrationSynQuick, t1-linear.cropnifti): new edge data: {'connect': [('warped_image', 'input_image')]}
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.cropnifti, t1-linear.Output): No edge data
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.cropnifti, t1-linear.Output): new edge data: {'connect': [('output_img', 'outfile_crop')]}
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.cropnifti, t1-linear.WriteEndMessage): No edge data
+261018-21:31:02,907 nipype.workflow DEBUG:
+	 (t1-linear.cropnifti, t1-linear.WriteEndMessage): new edge data: {'connect': [('output_img', 'final_file')]}
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.ContainerPath): No edge data
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.Input, t1-linear.ContainerPath): new edge data: {'connect': [('anat', 'bids_or_caps_filename')]}
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.GetIDs): No edge data
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.GetIDs): new edge data: {'connect': [('image_id', 'bids_image_id')]}
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.ContainerPath, t1-linear.WriteCaps): No edge data
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.ContainerPath, t1-linear.WriteCaps): new edge data: {'connect': [(('container', 'def fix_join(path, *paths):\n    """Fix joined path.\n\n    This workaround function is used in pipelines like DWIPreprocessing* or PETVolume. In the workflow.connect part,\n    you can use some function that are used as string, causing an import error\n    """\n    import os\n\n    return os.path.join(path, *paths)\n', ('t1_linear',)), 'container')]}
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.GetIDs, t1-linear.WriteCaps): No edge data
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.GetIDs, t1-linear.WriteCaps): new edge data: {'connect': [('substitutions', 'substitutions')]}
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): No edge data
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): new edge data: {'connect': [('image_id', '@image_id')]}
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): Edge data exists: {'connect': [('image_id', '@image_id')]}
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): new edge data: {'connect': [('image_id', '@image_id'), ('outfile_reg', '@outfile_reg')]}
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): Edge data exists: {'connect': [('image_id', '@image_id'), ('outfile_reg', '@outfile_reg')]}
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): new edge data: {'connect': [('image_id', '@image_id'), ('outfile_reg', '@outfile_reg'), ('affine_mat', '@affine_mat')]}
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): Edge data exists: {'connect': [('image_id', '@image_id'), ('outfile_reg', '@outfile_reg'), ('affine_mat', '@affine_mat')]}
+261018-21:31:02,908 nipype.workflow DEBUG:
+	 (t1-linear.Output, t1-linear.WriteCaps): new edge data: {'connect': [('image_id', '@image_id'), ('outfile_reg', '@outfile_reg'), ('affine_mat', '@affine_mat'), ('outfile_crop', '@outfile_crop')]}
+261018-21:31:02,923 nipype.workflow DEBUG:
+	 [MultiProc] Starting (n_procs=3, n_gpu_procs=0, mem_gb=14.40, cwd=/Users/sarthakahuja/Downloads/preprocessing_v2)
+261018-21:31:02,926 nipype.workflow DEBUG:
+	 Creating flat graph for workflow: t1-linear
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 expanding workflow: t1-linear
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 processing node: t1-linear.Input
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 processing node: t1-linear.Output
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 processing node: t1-linear.ReadingFiles
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 processing node: t1-linear.ImageID
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 processing node: t1-linear.n4biascorrection
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 processing node: t1-linear.antsRegistrationSynQuick
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 processing node: t1-linear.WriteEndMessage
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 processing node: t1-linear.cropnifti
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 processing node: t1-linear.ContainerPath
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 processing node: t1-linear.GetIDs
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 processing node: t1-linear.WriteCaps
+261018-21:31:02,928 nipype.workflow DEBUG:
+	 finished expanding workflow: t1-linear
+261018-21:31:02,928 nipype.workflow INFO:
+	 Workflow t1-linear settings: ['check', 'execution', 'logging', 'monitoring']
+261018-21:31:02,929 nipype.workflow DEBUG:
+	 PE: expanding iterables
+261018-21:31:02,929 nipype.workflow DEBUG:
+	 Removed the identity node t1-linear.Input from the graph.
+261018-21:31:02,929 nipype.workflow DEBUG:
+	 Removed the identity node t1-linear.Output from the graph.
+261018-21:31:02,929 nipype.workflow DEBUG:
+	 Detected iterable nodes [t1-linear.ReadingFiles]
+261018-21:31:02,929 nipype.workflow DEBUG:
+	 Expanding the iterable node t1-linear.ReadingFiles...
+261018-21:31:02,929 nipype.workflow DEBUG:
+	 node: t1-linear.ReadingFiles iterables: {'anat': <function _standardize_iterables.<locals>.make_field_func.<locals>.<lambda> at 0x10fc613a0>}
+261018-21:31:02,929 nipype.workflow DEBUG:
+	 ('subnodes:', [t1-linear.ReadingFiles, t1-linear.ImageID, t1-linear.antsRegistrationSynQuick, t1-linear.cropnifti, t1-linear.WriteEndMessage, t1-linear.WriteCaps, t1-linear.GetIDs, t1-linear.n4biascorrection, t1-linear.ContainerPath])
+261018-21:31:02,930 nipype.workflow DEBUG:
+	 [Node] ReadingFiles - setting input anat = /Users/sarthakahuja/ppmi_bids/sub-3279/ses-M00/anat/sub-3279_ses-M00_T1w.nii.gz
+261018-21:31:02,930 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_anat_..Users..sarthakahuja..ppmi_bids..sub-3279..ses-M00..anat..sub-3279_ses-M00_T1w.nii.gz
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 [Node] ReadingFiles - setting input anat = /Users/sarthakahuja/ppmi_bids/sub-3280/ses-M00/anat/sub-3280_ses-M00_T1w.nii.gz
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_anat_..Users..sarthakahuja..ppmi_bids..sub-3280..ses-M00..anat..sub-3280_ses-M00_T1w.nii.gz
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 PE: expanding iterables ... done
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 [Node] ImageID - setting input filename = /Users/sarthakahuja/ppmi_bids/sub-3279/ses-M00/anat/sub-3279_ses-M00_T1w.nii.gz
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 [Node] n4biascorrection - setting input input_image = /Users/sarthakahuja/ppmi_bids/sub-3279/ses-M00/anat/sub-3279_ses-M00_T1w.nii.gz
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 [Node] WriteEndMessage - setting input anat = /Users/sarthakahuja/ppmi_bids/sub-3279/ses-M00/anat/sub-3279_ses-M00_T1w.nii.gz
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 [Node] ContainerPath - setting input bids_or_caps_filename = /Users/sarthakahuja/ppmi_bids/sub-3279/ses-M00/anat/sub-3279_ses-M00_T1w.nii.gz
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 Removed the identity node t1-linear.ReadingFiles from the graph.
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 [Node] ImageID - setting input filename = /Users/sarthakahuja/ppmi_bids/sub-3280/ses-M00/anat/sub-3280_ses-M00_T1w.nii.gz
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 [Node] n4biascorrection - setting input input_image = /Users/sarthakahuja/ppmi_bids/sub-3280/ses-M00/anat/sub-3280_ses-M00_T1w.nii.gz
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 [Node] WriteEndMessage - setting input anat = /Users/sarthakahuja/ppmi_bids/sub-3280/ses-M00/anat/sub-3280_ses-M00_T1w.nii.gz
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 [Node] ContainerPath - setting input bids_or_caps_filename = /Users/sarthakahuja/ppmi_bids/sub-3280/ses-M00/anat/sub-3280_ses-M00_T1w.nii.gz
+261018-21:31:02,931 nipype.workflow DEBUG:
+	 Removed the identity node t1-linear.ReadingFiles from the graph.
+261018-21:31:02,933 nipype.workflow DEBUG:
+	 Performing depth first search
+261018-21:31:02,934 nipype.workflow INFO:
+	 Running in parallel.
+261018-21:31:02,936 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 0/0/6 (done/running/ready), 0/16 (pending_tasks/waiting).
+261018-21:31:02,936 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+261018-21:31:02,936 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 6 jobs ready. Free memory (GB): 14.40/14.40, Free processors: 3/3, Free GPU slot:0/0.
+261018-21:31:02,965 nipype.workflow DEBUG:
+	 Allocating t1-linear.ImageID ID=0 (0.20GB, 1 threads). Free: 14.20GB, 2 threads, 0 GPU slots.
+261018-21:31:02,965 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/ImageID".
+261018-21:31:02,965 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.ImageID" locally: cached=False, updated=False.
+261018-21:31:02,965 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/ImageID".
+261018-21:31:02,970 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.ImageID (taskid=1).
+261018-21:31:02,971 nipype.workflow DEBUG:
+	 Allocating t1-linear.n4biascorrection ID=1 (0.20GB, 1 threads). Free: 14.00GB, 1 threads, 0 GPU slots.
+261018-21:31:02,971 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/n4biascorrection".
+261018-21:31:02,971 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.n4biascorrection" locally: cached=False, updated=False.
+261018-21:31:02,971 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/n4biascorrection".
+261018-21:31:02,973 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.n4biascorrection (taskid=2).
+261018-21:31:02,974 nipype.workflow DEBUG:
+	 Allocating t1-linear.ContainerPath ID=2 (0.20GB, 1 threads). Free: 13.80GB, 0 threads, 0 GPU slots.
+261018-21:31:02,974 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/ContainerPath".
+261018-21:31:02,974 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.ContainerPath" locally: cached=False, updated=False.
+261018-21:31:02,974 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/ContainerPath".
+261018-21:31:02,977 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.ContainerPath (taskid=3).
+261018-21:31:02,978 nipype.workflow DEBUG:
+	 Cannot allocate job 3 (0.20GB, 1 threads, 0 GPU slots).
+261018-21:31:02,978 nipype.workflow DEBUG:
+	 Cannot allocate job 4 (0.20GB, 1 threads, 0 GPU slots).
+261018-21:31:02,978 nipype.workflow DEBUG:
+	 Cannot allocate job 5 (0.20GB, 1 threads, 0 GPU slots).
+261018-21:31:04,941 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 0/3/3 (done/running/ready), 3/13 (pending_tasks/waiting).
+261018-21:31:04,941 nipype.workflow INFO:
+	 [Job 0] Completed (t1-linear.ImageID).
+261018-21:31:04,942 nipype.workflow INFO:
+	 [Job 2] Completed (t1-linear.ContainerPath).
+261018-21:31:04,942 nipype.workflow DEBUG:
+	 Tasks currently running: 1. Pending: 1.
+261018-21:31:04,943 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 4 jobs ready. Free memory (GB): 14.20/14.40, Free processors: 2/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.n4biascorrection
+261018-21:31:04,976 nipype.workflow DEBUG:
+	 Allocating t1-linear.ImageID ID=3 (0.20GB, 1 threads). Free: 14.00GB, 1 threads, 0 GPU slots.
+261018-21:31:04,976 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/ImageID".
+261018-21:31:04,976 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.ImageID" locally: cached=False, updated=False.
+261018-21:31:04,976 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/ImageID".
+261018-21:31:04,976 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.ImageID (taskid=4).
+261018-21:31:04,976 nipype.workflow DEBUG:
+	 Allocating t1-linear.n4biascorrection ID=4 (0.20GB, 1 threads). Free: 13.80GB, 0 threads, 0 GPU slots.
+261018-21:31:04,976 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/n4biascorrection".
+261018-21:31:04,976 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.n4biascorrection" locally: cached=False, updated=False.
+261018-21:31:04,976 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/n4biascorrection".
+261018-21:31:04,976 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.n4biascorrection (taskid=5).
+261018-21:31:04,976 nipype.workflow DEBUG:
+	 Cannot allocate job 5 (0.20GB, 1 threads, 0 GPU slots).
+261018-21:31:04,976 nipype.workflow DEBUG:
+	 Cannot allocate job 6 (0.20GB, 1 threads, 0 GPU slots).
+261018-21:31:06,946 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 2/3/2 (done/running/ready), 3/11 (pending_tasks/waiting).
+261018-21:31:06,946 nipype.workflow INFO:
+	 [Job 3] Completed (t1-linear.ImageID).
+261018-21:31:06,946 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+261018-21:31:06,947 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 3 jobs ready. Free memory (GB): 14.00/14.40, Free processors: 1/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.n4biascorrection
+                       * t1-linear.n4biascorrection
+261018-21:31:06,973 nipype.workflow DEBUG:
+	 Allocating t1-linear.ContainerPath ID=5 (0.20GB, 1 threads). Free: 13.80GB, 0 threads, 0 GPU slots.
+261018-21:31:06,973 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/ContainerPath".
+261018-21:31:06,973 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.ContainerPath" locally: cached=False, updated=False.
+261018-21:31:06,973 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/ContainerPath".
+261018-21:31:06,973 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.ContainerPath (taskid=6).
+261018-21:31:06,975 nipype.workflow DEBUG:
+	 Cannot allocate job 6 (0.20GB, 1 threads, 0 GPU slots).
+261018-21:31:06,975 nipype.workflow DEBUG:
+	 Cannot allocate job 8 (0.20GB, 1 threads, 0 GPU slots).
+261018-21:31:08,951 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 3/3/2 (done/running/ready), 3/10 (pending_tasks/waiting).
+261018-21:31:08,951 nipype.workflow INFO:
+	 [Job 5] Completed (t1-linear.ContainerPath).
+261018-21:31:08,952 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+261018-21:31:08,952 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 2 jobs ready. Free memory (GB): 14.00/14.40, Free processors: 1/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.n4biascorrection
+                       * t1-linear.n4biascorrection
+261018-21:31:08,985 nipype.workflow DEBUG:
+	 Allocating t1-linear.GetIDs ID=6 (0.20GB, 1 threads). Free: 13.80GB, 0 threads, 0 GPU slots.
+261018-21:31:08,985 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/GetIDs".
+261018-21:31:08,985 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.GetIDs" locally: cached=False, updated=False.
+261018-21:31:08,985 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/GetIDs".
+261018-21:31:08,985 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.GetIDs (taskid=7).
+261018-21:31:08,985 nipype.workflow DEBUG:
+	 Cannot allocate job 8 (0.20GB, 1 threads, 0 GPU slots).
+261018-21:31:10,956 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 4/3/1 (done/running/ready), 3/9 (pending_tasks/waiting).
+261018-21:31:10,956 nipype.workflow INFO:
+	 [Job 6] Completed (t1-linear.GetIDs).
+261018-21:31:10,957 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+261018-21:31:10,957 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 1 jobs ready. Free memory (GB): 14.00/14.40, Free processors: 1/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.n4biascorrection
+                       * t1-linear.n4biascorrection
+261018-21:31:10,982 nipype.workflow DEBUG:
+	 Allocating t1-linear.GetIDs ID=8 (0.20GB, 1 threads). Free: 13.80GB, 0 threads, 0 GPU slots.
+261018-21:31:10,982 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/GetIDs".
+261018-21:31:10,983 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.GetIDs" locally: cached=False, updated=False.
+261018-21:31:10,983 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/GetIDs".
+261018-21:31:10,983 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.GetIDs (taskid=8).
+261018-21:31:12,961 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 5/3/0 (done/running/ready), 3/8 (pending_tasks/waiting).
+261018-21:31:12,961 nipype.workflow INFO:
+	 [Job 8] Completed (t1-linear.GetIDs).
+261018-21:31:12,961 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+261018-21:31:12,961 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 14.00/14.40, Free processors: 1/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.n4biascorrection
+                       * t1-linear.n4biascorrection
+261018-21:31:14,966 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 6/2/0 (done/running/ready), 2/8 (pending_tasks/waiting).
+261018-21:31:14,966 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+261018-21:32:21,123 nipype.workflow INFO:
+	 [Job 1] Completed (t1-linear.n4biascorrection).
+261018-21:32:21,125 nipype.workflow INFO:
+	 [Job 4] Completed (t1-linear.n4biascorrection).
+261018-21:32:21,126 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+261018-21:32:21,128 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 14.40/14.40, Free processors: 3/3, Free GPU slot:0/0.
+261018-21:32:21,184 nipype.workflow DEBUG:
+	 Allocating t1-linear.antsRegistrationSynQuick ID=7 (0.20GB, 1 threads). Free: 14.20GB, 2 threads, 0 GPU slots.
+261018-21:32:21,184 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/antsRegistrationSynQuick".
+261018-21:32:21,184 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.antsRegistrationSynQuick" locally: cached=False, updated=False.
+261018-21:32:21,184 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/antsRegistrationSynQuick".
+261018-21:32:21,185 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.antsRegistrationSynQuick (taskid=9).
+261018-21:32:21,185 nipype.workflow DEBUG:
+	 Allocating t1-linear.antsRegistrationSynQuick ID=9 (0.20GB, 1 threads). Free: 14.00GB, 1 threads, 0 GPU slots.
+261018-21:32:21,185 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/antsRegistrationSynQuick".
+261018-21:32:21,185 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.antsRegistrationSynQuick" locally: cached=False, updated=False.
+261018-21:32:21,185 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/antsRegistrationSynQuick".
+261018-21:32:21,185 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.antsRegistrationSynQuick (taskid=10).
+261018-21:32:23,128 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 8/2/0 (done/running/ready), 2/6 (pending_tasks/waiting).
+261018-21:32:23,128 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+261018-21:32:23,128 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 14.00/14.40, Free processors: 1/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.antsRegistrationSynQuick
+                       * t1-linear.antsRegistrationSynQuick
+261018-21:32:45,174 nipype.workflow INFO:
+	 [Job 9] Completed (t1-linear.antsRegistrationSynQuick).
+261018-21:32:45,174 nipype.workflow DEBUG:
+	 Tasks currently running: 1. Pending: 1.
+261018-21:32:45,174 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 14.20/14.40, Free processors: 2/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.antsRegistrationSynQuick
+261018-21:32:45,200 nipype.workflow DEBUG:
+	 Allocating t1-linear.cropnifti ID=11 (0.20GB, 1 threads). Free: 14.00GB, 1 threads, 0 GPU slots.
+261018-21:32:45,200 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/cropnifti".
+261018-21:32:45,200 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.cropnifti" locally: cached=False, updated=False.
+261018-21:32:45,200 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/cropnifti".
+261018-21:32:45,200 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.cropnifti (taskid=11).
+261018-21:32:47,179 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 9/2/0 (done/running/ready), 2/5 (pending_tasks/waiting).
+261018-21:32:47,179 nipype.workflow INFO:
+	 [Job 11] Completed (t1-linear.cropnifti).
+261018-21:32:47,179 nipype.workflow DEBUG:
+	 Tasks currently running: 1. Pending: 1.
+261018-21:32:47,179 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 2 jobs ready. Free memory (GB): 14.20/14.40, Free processors: 2/3, Free GPU slot:0/0.
+                     Currently running:
+                       * t1-linear.antsRegistrationSynQuick
+261018-21:32:47,205 nipype.workflow DEBUG:
+	 Allocating t1-linear.WriteEndMessage ID=14 (0.20GB, 1 threads). Free: 14.00GB, 1 threads, 0 GPU slots.
+261018-21:32:47,206 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/WriteEndMessage".
+261018-21:32:47,206 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.WriteEndMessage" locally: cached=False, updated=False.
+261018-21:32:47,206 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/WriteEndMessage".
+261018-21:32:47,206 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.WriteEndMessage (taskid=12).
+261018-21:32:47,206 nipype.workflow DEBUG:
+	 Allocating t1-linear.WriteCaps ID=15 (0.20GB, 1 threads). Free: 13.80GB, 0 threads, 0 GPU slots.
+261018-21:32:47,206 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/WriteCaps".
+261018-21:32:47,206 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.WriteCaps" locally: cached=False, updated=False.
+261018-21:32:47,206 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/7970f719504b2ddd88756c5c500df3ccaa4f9306/WriteCaps".
+261018-21:32:47,206 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.WriteCaps (taskid=13).
+261018-21:32:49,183 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 10/3/0 (done/running/ready), 3/3 (pending_tasks/waiting).
+261018-21:32:49,184 nipype.workflow INFO:
+	 [Job 7] Completed (t1-linear.antsRegistrationSynQuick).
+261018-21:32:49,184 nipype.workflow INFO:
+	 [Job 14] Completed (t1-linear.WriteEndMessage).
+261018-21:32:49,185 nipype.workflow INFO:
+	 [Job 15] Completed (t1-linear.WriteCaps).
+261018-21:32:49,185 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+261018-21:32:49,186 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 14.40/14.40, Free processors: 3/3, Free GPU slot:0/0.
+261018-21:32:49,246 nipype.workflow DEBUG:
+	 Allocating t1-linear.cropnifti ID=10 (0.20GB, 1 threads). Free: 14.20GB, 2 threads, 0 GPU slots.
+261018-21:32:49,246 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/cropnifti".
+261018-21:32:49,246 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.cropnifti" locally: cached=False, updated=False.
+261018-21:32:49,246 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/cropnifti".
+261018-21:32:49,247 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.cropnifti (taskid=14).
+261018-21:32:51,188 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 13/1/0 (done/running/ready), 1/2 (pending_tasks/waiting).
+261018-21:32:51,189 nipype.workflow INFO:
+	 [Job 10] Completed (t1-linear.cropnifti).
+261018-21:32:51,190 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+261018-21:32:51,190 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 14.40/14.40, Free processors: 3/3, Free GPU slot:0/0.
+261018-21:32:51,252 nipype.workflow DEBUG:
+	 Allocating t1-linear.WriteEndMessage ID=12 (0.20GB, 1 threads). Free: 14.20GB, 2 threads, 0 GPU slots.
+261018-21:32:51,252 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/WriteEndMessage".
+261018-21:32:51,252 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.WriteEndMessage" locally: cached=False, updated=False.
+261018-21:32:51,252 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/WriteEndMessage".
+261018-21:32:51,252 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.WriteEndMessage (taskid=15).
+261018-21:32:51,252 nipype.workflow DEBUG:
+	 Allocating t1-linear.WriteCaps ID=13 (0.20GB, 1 threads). Free: 14.00GB, 1 threads, 0 GPU slots.
+261018-21:32:51,252 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/WriteCaps".
+261018-21:32:51,252 nipype.workflow DEBUG:
+	 Checking hash "t1-linear.WriteCaps" locally: cached=False, updated=False.
+261018-21:32:51,252 nipype.workflow DEBUG:
+	 [Node] Not cached "/Users/sarthakahuja/Desktop/ppmi_dataaaaaa/clinica_work/t1-linear/4c59a2d3a9c8731a0eb6ecf448ac31f1c05ca43b/WriteCaps".
+261018-21:32:51,253 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task t1-linear.WriteCaps (taskid=16).
+261018-21:32:53,193 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 14/2/0 (done/running/ready), 2/0 (pending_tasks/waiting).
+261018-21:32:53,194 nipype.workflow INFO:
+	 [Job 12] Completed (t1-linear.WriteEndMessage).
+261018-21:32:53,195 nipype.workflow INFO:
+	 [Job 13] Completed (t1-linear.WriteCaps).
+261018-21:32:53,195 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+261018-21:32:53,196 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 0 jobs ready. Free memory (GB): 14.40/14.40, Free processors: 3/3, Free GPU slot:0/0.
+261018-21:32:53,196 nipype.workflow DEBUG:
+	 No tasks are being run, and no jobs can be submitted to the queue. Potential deadlock
